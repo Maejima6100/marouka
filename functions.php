@@ -26,4 +26,3 @@ function yithproteo_child_enqueue_styles() {
 }
 
 add_action( 'wp_enqueue_scripts', 'yithproteo_child_enqueue_styles' );
-add_filter( 'https_local_ssl_verify', '__return_true' );

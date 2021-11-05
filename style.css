@@ -13,3 +13,112 @@ Text Domain:	 yith-proteo-child
 /*
     Add your custom styles here
 */
+
+/*Custom header styles */
+div.container .header-contents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Nav Menu */
+nav.main-navigation {
+    width: 33.3% !important;
+    flex-wrap: nowrap !important;
+    
+}
+
+ul#primary-menu {
+    text-align: left !important;
+}
+ 
+/* header sidebar */
+div.header-sidebar {
+    width: 33.3% !important;
+}
+
+/* Logo */
+div.site-branding.tagline-position-below {
+    width: 33.3% !important;
+    
+}
+p.site-title {
+    width:100%;
+}
+a.custom-logo-link {
+    width: 33%;
+    margin: 0 auto;
+}
+
+/* header sidebar customization */
+.header-sidebar .widget {
+    margin-left: 34px;
+}
+/* custom icons */
+section.widget.widget_search::before {
+    content: url('http://localhost/wordpress/wp-content/uploads/icons/search.svg');
+    display: inline-block;
+}
+
+span.lnr.lnr-user::before {
+    content: url('http://localhost/wordpress/wp-content/uploads/icons/user.svg');
+}
+
+/* dont display the hello user text */
+a.yith-proteo-user-welcome-message :last-child {
+    display: none;
+}
+
+span.lnr.lnr-cart::before {
+    content: url('http://localhost/wordpress/wp-content/uploads/icons/shopping-cart.svg');
+}
+
+a.proceed-to-cart-icon :last-child {
+    font-size:10px;
+    color: #593966;
+    position: relative;
+    bottom: 6px;
+    left: 3px;
+}
+span.lnr.lnr-cart::after {
+    content: '';
+    position: absolute;
+    bottom:7px;
+    right: 5px;
+    z-index: -1;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: #FFDD4D;
+}
+
+/* media queries */ 
+@media screen and (max-width: 992px) {
+    
+    span.lnr.lnr-user::before {
+        display: none;
+    }
+    
+    section.widget.widget_search::before {
+        content: url('http://localhost/wordpress/wp-content/uploads/icons/search.svg');
+        display: none;
+    }
+    
+    a.custom-logo-link {
+        float:left;
+    }
+
+    div.widget_shopping_cart_content {
+        float: right;
+        margin: 0;
+    }
+
+}
+
+/*div.site-header.left_logo_navigation_inline .header-sidebar{
+    width:33.3% !important;
+}
+.site-header .header-contents {
+    display: flex;
+    justify-content: space-between;
+}
