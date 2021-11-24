@@ -13,33 +13,196 @@ Text Domain:	 yith-proteo-child
 /*
     Add your custom styles here
 */
-
-/*Custom header styles */
-div.container .header-contents {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Custom fonts */
+@font-face {
+    font-family: 'Proxima Soft';
+    src: url('https://angelakopoulos.com/maroukas/wp-content/themes/yith-proteo-child/fonts/ProximaSoft-Medium.eot');
+    src: url('https://angelakopoulos.com/maroukas/wp-content/themes/yith-proteo-child/fonts/ProximaSoft-Medium.eot?#iefix') format('embedded-opentype'),
+        url('https://angelakopoulos.com/maroukas/wp-content/themes/yith-proteo-child/fonts/ProximaSoft-Medium.woff2') format('woff2'),
+        url('https://angelakopoulos.com/maroukas/wp-content/themes/yith-proteo-child/fonts/ProximaSoft-Medium.woff') format('woff'),
+        url('https://angelakopoulos.com/maroukas/wp-content/themes/yith-proteo-child/fonts/ProximaSoft-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
+
+@font-face {
+    font-family: 'Proxima Soft';
+    src: url('https://angelakopoulos.com/maroukas/wp-content/themes/yith-proteo-child/fonts/ProximaSoft-Light.eot');
+    src: url('https://angelakopoulos.com/maroukas/wp-content/themes/yith-proteo-child/fonts/ProximaSoft-Light.eot?#iefix') format('embedded-opentype'),
+        url('https://angelakopoulos.com/maroukas/wp-content/themes/yith-proteo-child/fonts/ProximaSoft-Light.woff2') format('woff2'),
+        url('https://angelakopoulos.com/maroukas/wp-content/themes/yith-proteo-child/fonts/ProximaSoft-Light.woff') format('woff'),
+        url('https://angelakopoulos.com/maroukas/wp-content/themes/yith-proteo-child/fonts/ProximaSoft-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+  font-family: "Proxima Soft", Arial, sans-serif !important; 
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  // font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+}
+
+p {
+        font-family: "Proxima Soft", Arial, sans-serif !important;
+}
+    
+h1, h2, h3, h4, h5 {
+        font-family: "Proxima Soft", Arial, sans-serif !important;
+        color: #593966 !important;
+}
+
+/* ----- Custom footer styles ----- */
+
+/* change background color of full width containers */
+div.footer-custom{
+    background:#593966;
+    padding: 60px 0 55px;
+}
+
+div.footer-custom-info{
+    background: #51315E;
+}
+
+/* Set height and backround for the footer elements */
+div.footer-row{
+    background: #593966;
+}
+div.footer-row-info{
+    min-height: 52px;
+    background: #51315E;
+}
+
+/* styles for the footer info elements */
+.footer-info {
+    text-decoration: none !important;
+    color:#A890B1 !important;
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-size: 14px !important;
+    line-height: 31px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.6px;
+}
+a.footer-info:hover {
+    text-decoration: none;
+    color: white !important;
+}
+
+/* styles for the main footer elements */
+.footer-logo{
+    flex-direction:column;
+    justify-content:center;
+}
+.footer-icons{
+    display: flex !important;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+}
+.footer-icons ul{
+    list-style: none;
+    display: flex;
+    padding: 0;
+    padding-top:28px;
+    margin-right:auto;
+}
+.footer-icons ul li a{
+    display: inline-block;
+    padding: 30px;
+    padding-left:0;
+}
+div.footer-menu-div{
+    padding-top:25px;
+}
+div.footer-icons img:hover{
+    filter: brightness(1.50);
+}
+
+ul.footer-menu-list {
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500;
+    line-height: 18px !important;
+    list-style: none;
+    padding-left: 0 !important;
+    letter-spacing:1px !important;
+}
+.footer-menu-list{
+    margin-top: -10px;
+} 
+.footer-menu-list li{
+    margin-top: 16px;
+} 
+
+a.footer-menu-link{
+    text-decoration: none;
+    color:white !important;
+}
+a.footer-menu-link:hover{
+    text-decoration: none !important;
+    color:#FFDD4D !important;
+}
+
+ul.footer-mobile-menu{
+    text-align: center;
+}
+/* ------- end of footer styles ------*/
+
+
+/* ----- Custom Header styles ----- */
+#masthead{
+    background-color: #F9F9F9;
+}
+div.container.header-contents {
+    display: flex !important;
+    justify-content: space-between!important;
+    align-items: center!important;
+    background-color: #F9F9F9;
+}
+
+
 /* Nav Menu */
 nav.main-navigation {
     width: 33.3% !important;
     flex-wrap: nowrap !important;
-    
 }
 
 ul#primary-menu {
     text-align: left !important;
-}
- 
-/* header sidebar */
-div.header-sidebar {
-    width: 33.3% !important;
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-weight: 500 !important;
+    letter-spacing: 1px !important;
 }
 
-/* Logo */
+ul#primary-menu a{   
+    color: #593966 !important;
+}
+
+ul#primary-menu a:hover{   
+    color: #A890B1 !important;
+}
+
+.main-navigation li:last-child{
+    margin-right:0;
+}
+ 
+ul#primary-menu li.menu-item-has-children a::after{
+    content: '';
+    margin:0;
+    
+}
+
+/* Logo - Site branding */
 div.site-branding.tagline-position-below {
     width: 33.3% !important;
-    
 }
 p.site-title {
     width:100%;
@@ -49,41 +212,46 @@ a.custom-logo-link {
     margin: 0 auto;
 }
 
-/* header sidebar customization */
-.header-sidebar .widget {
-    margin-left: 34px;
+img.mobile-logo{
+    width:122px;
+    height:38px;
 }
+/*-- header sidebar customization --*/
+
+div.header-sidebar {
+    width: 33.3% !important;
+}
+
 /* custom icons */
 section.widget.widget_search::before {
-    content: url('http://localhost/wordpress/wp-content/uploads/icons/search.svg');
-    display: inline-block;
+    content: url('https://angelakopoulos.com/maroukas/wp-content/uploads/svg/icons/Search.svg');
 }
 
-span.lnr.lnr-user::before {
-    content: url('http://localhost/wordpress/wp-content/uploads/icons/user.svg');
-}
-
-/* dont display the hello user text */
-a.yith-proteo-user-welcome-message :last-child {
+/* dont display the hello user text */  
+a.yith-proteo-user-welcome-message :last-child:not(span.lnr.lnr-user) {
     display: none;
 }
 
+span.lnr.lnr-user::before {
+    content: url('https://angelakopoulos.com/maroukas/wp-content/uploads/svg/icons/user.svg');
+}
+
 span.lnr.lnr-cart::before {
-    content: url('http://localhost/wordpress/wp-content/uploads/icons/shopping-cart.svg');
+    content: url('https://angelakopoulos.com/maroukas/wp-content/uploads/svg/icons/shopping-cart.svg');
 }
 
 a.proceed-to-cart-icon :last-child {
     font-size:10px;
     color: #593966;
-    position: relative;
-    bottom: 6px;
-    left: 3px;
+    position: absolute;
+    bottom: 7px;
+
 }
-span.lnr.lnr-cart::after {
+a.proceed-to-cart-icon :last-child::after {
     content: '';
     position: absolute;
-    bottom:7px;
-    right: 5px;
+    bottom:0px;
+    left: -5px;
     z-index: -1;
     display: inline-block;
     height: 18px;
@@ -92,33 +260,1015 @@ span.lnr.lnr-cart::after {
     background-color: #FFDD4D;
 }
 
-/* media queries */ 
+/*-- sidebar with WPML widget --*/
+section.widget {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 13% !important;
+    text-align: end !important;
+    padding-top: 5px !important;
+}
+section#icl_lang_sel_widget-5{
+    padding: 0 !important;
+    float:left;
+    width:58% !important;
+    text-align: end;
+}
+span.wpml-ls-display{
+    color: #593966;
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+span.wpml-ls-display:hover{
+    color: #A890B1;
+}
+span.wpml-ls-native{
+    color: #A890B1;
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    line-height: 27px !important;
+    vertical-align: middle !important;
+}
+div.wpml-ls-sidebars-header-sidebar{
+    display:flex;
+    align-items:center;
+    justify-content:end;
+}
+
+.main-navigation ul{
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-weight: 500 !important;
+}
+
+.wpml-ls-legacy-list-horizontal{
+    padding: 7px 0px !important;
+}
+li.wpml-ls-last-item{
+
+}
+
+li.wpml-ls-first-item{
+    padding-right:15px!important;
+}
+
+
+
+/* Style headers and adding stroke svg */
+.stroke{
+    font-family: "Proxima Soft", Arial, sans-serif;
+    font-weight: 500 !important;
+    font-size: 48px !important;
+    line-height: 52px !important;
+    letter-spacing: -1.25px;
+    margin: 80px 0px 80px 0px;
+}
+
+.stroke::after{
+    content: url(http://angelakopoulos.com/maroukas/wp-content/uploads/svg/stroke1.svg);
+    position: relative;
+    left: 50px;
+    top: 8px;
+}
+
+/*---- styles for the product categories ----*/
+li.product-category a img{
+    border-radius: 12px;
+}
+.woocommerce-loop-category__title{
+    font-family: "Proxima Soft", Arial, sans-serif;
+    font-weight: 500 !important;
+    font-size: 25px !important;
+    line-height: 30px !important;
+    margin-top: 35px;
+}
+mark.count {
+    display:none;
+}
+
+ul.products li.product-category{
+    width:33.3333%;
+    background: none !important;
+    padding: 0 15px;
+}
+ul.products {    
+    margin: 0 -15px;
+}
+
+
+/*------ custom product-card styles ------*/
+
+/* hide unwanted elements */
+div.star-rating{
+    display:none;
+}
+a.button.add_to_cart_button{
+    display:none !important;
+}
+
+.product-content a .yith-proteo-product-loop-image img{
+    border-radius: 12px;
+}
+div.yith-proteo-product-loop-image{
+    width:100%;
+}
+
+div.product-content a{
+    background:white;
+    display: flex !important;
+    flex-wrap:wrap;
+    padding: 13px;
+}
+
+.woocommerce-loop-product__title{
+    margin: 0 !important;    
+    padding:0 !important;
+    color: #252525 !important;
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    line-height: 28px !important;
+    letter-spacing:-0.34px;
+    width: 65%;
+    text-align: left !important;
+    padding-top: 32px !important;
+    padding-left: 13px!important;
+}
+
+span.price{
+    /*margin: 0 !important;    */
+    /*padding:0 !important;*/
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 18px !important;
+    line-height: 28px !important;
+    color: #252525 !important;
+    width: 35%;
+    text-align: right;
+    padding-top: 32px;
+    padding-bottom: 40px;
+    padding-right: 13px;
+}
+span.price del{
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    line-height: 19px !important;
+    color:#252525 !important;
+    opacity:0.5;
+}
+span.price.product-hover-color ins{
+    color:#593966 !important;
+}
+span.price.product-hover-color span{
+    color:#593966 !important;
+}
+.product-hover-color{
+        color:#593966 !important;
+}
+
+ul.products li.product, ul.products li.wc-block-grid__product, .wc-block-grid ul.wc-block-grid__products li.product, .wc-block-grid ul.wc-block-grid__products li.wc-block-grid__product { 
+    padding: 0 15px; 
+}
+
+/*---- wishlist custom styles ----*/
+
+/* standard style before it is clicked */
+div.yith-wcwl-add-button a span{
+    display:none;
+}
+
+div.yith-wcwl-add-button a{
+    background: none;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 5;
+}
+
+div.yith-wcwl-add-button a i.yith-wcwl-icon{
+    font-size:35px;
+    color: #593966;
+}
+
+/* styles after click */
+div.yith-wcwl-wishlistaddedbrowse span.feedback{
+    background: none;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 5;
+    opacity:0;
+}
+
+div.yith-wcwl-wishlistaddedbrowse::before{
+    content:url('http://angelakopoulos.com/maroukas/wp-content/uploads/svg/icons/heart.svg');
+    width:35px;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 5;
+    opacity:1 !important;
+}
+
+div.yith-wcwl-wishlistaddedbrowse a{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 5;
+    opacity: 0;
+}
+
+/* if its already in the wishlist */
+div.yith-wcwl-wishlistexistsbrowse span.feedback{
+    background: none;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 5;
+    opacity:0;
+}
+
+div.yith-wcwl-wishlistexistsbrowse::before{
+    content:url('http://angelakopoulos.com/maroukas/wp-content/uploads/svg/icons/heart.svg');
+    width:35px;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 5;
+    opacity:1 !important;
+}
+
+div.yith-wcwl-wishlistexistsbrowse a{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 5;
+    opacity: 0;
+}
+
+
+/*-- sale tag custom icon --*/
+span.onsale{
+    width:50px !important;
+}
+span.onsale::before{
+    content: url('http://angelakopoulos.com/maroukas/wp-content/uploads/svg/icons/saletag.svg');
+    position: absolute;
+    z-index:50;
+    top: -40px !important;
+    right: -40px !important;
+}
+
+/*------ custom product-slider styles end------*/
+
+/*---- custom banner styles ----*/
+.marouka-home-banner img{
+    border-radius: 12px;
+}
+
+.marouka-home-banner::before{
+        border-radius: 12px;
+}
+.marouka-home-banner{
+        border-radius: 12px;
+}
+p.marouka-banner-text{
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-weight: 500 !important;
+    line-height: 52px !important;
+    font-size: 48px !important;
+    letter-spacing: -1.25px !important; 
+    color:white !important;
+}
+.marouka-banner-text a{
+    color: white;
+    text-decoration: none;
+    position:absolute;
+    top:0;
+    left:0;
+    padding: 125px 65px;
+}
+
+.marouka-banner-block{
+    margin:  0 !important;
+    padding: 0 !important;
+}
+.marouka-banner-image{
+    margin-top:5px;
+}
+
+/*----- homepage Hero -----*/
+.hero-block{
+    margin-bottom: -200px;
+    margin-top: -280px;
+}
+.hero-image-mobile{
+    display:none;
+}
+.hero-button{
+    position: absolute;
+    top: 460px;
+    transition:all 0.2s ;
+}
+.hero-button:hover{
+    transform:scale(1.05);
+    filter:brightness(1.05);
+    transition:all 0.2s ;
+}
+.hero-button a{
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+    font-size: 20px !important;
+}
+
+.h2-hero-block h2{
+    position: relative;
+    top: -670px;
+    text-align: center;
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-weight: 500 !important;
+    line-height: 52px !important;
+    font-size: 48px !important;
+    letter-spacing: -1.25px !important; 
+}
+.hero-image{
+    text-align:center;
+}
+
+.espa-banner figure{
+    position:relative;
+    top:358px;
+}
+.mobile-espa-banner-block{
+    display:none;
+}
+
+/*---- about page ----*/
+
+div.about-text-block{
+    margin-right:-2em;
+}
+.about-text-block{
+    padding-right:330px!important;
+}
+
+.about-pic-block{
+    position:relative;
+}
+
+.about-pic figure img{
+    border-radius: 12px 100px 12px 12px !important;
+    margin-top:-10px;
+}
+
+.about-pic figure::after{
+    content: url('https://angelakopoulos.com/maroukas/wp-content/uploads/svg/icons/about.gif');
+    position:absolute;
+    z-index:5;
+    bottom:50px;
+    left:75px;
+}
+
+p.marouka-about-text{
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-weight: 300 !important;
+    line-height: 22px!important;
+    font-size: 16px!important;
+    color: #000000 !important;
+}
+.marouka-about-header{
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-weight: 500 !important;
+    line-height: 52px !important;
+    font-size: 48px !important;
+    letter-spacing: -1.25px !important;
+    color: #593966 !important;
+    margin-bottom:40px;
+}
+
+/*----- Shop Page -----*/
+h1.page-title{
+    display:none !important;
+}
+.archive-text{
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-weight: 500 !important;
+    line-height: 52px;
+    font-size: 48px;
+    letter-spacing: -1.25px;
+}
+.yoast-breadcrumbs{
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-weight: 500 !important;
+    line-height: 19px;
+    font-size: 16px;
+    color:#A890B1!important;
+    position:relative;
+    top:-86px;
+}
+.yoast-breadcrumbs span span a{
+    text-decoration: none !important;
+    color:#A890B1!important;
+}
+.yoast-breadcrumbs span span a:hover{
+    text-decoration: none !important;
+    color: #593966 !important;
+}
+
+.shop-image{
+    border-radius:0 100px 0 0;
+}
+.shop-text{
+    margin-bottom: -382px;
+}
+.shop-text::after{
+    content:'';
+    position:relative;
+    top:-220px;
+    right: -175px;
+    display:block;
+    height:382px;
+    width:382px;
+    border-radius: 50%;
+    background:#FFDD4D;
+    z-index:-1;
+}
+.mobile-shop-text{
+    display:none;    
+}
+
+.categories-block .wp-block-column div ul li a img{
+    display:none !important;
+}
+.categories-block .wp-block-column div ul li a h2{
+    margin: 0;
+    padding: 10px;
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-weight: 500 !important;
+    line-height: 19px !important;
+    font-size: 16px !important;
+}
+.categories-block .wp-block-column div ul li a{
+    border: 2px solid #593966;
+    border-radius:30px;
+}
+
+span.select2-selection{
+    border-radius: 23px !important;
+}
+
+span.select2-selection__rendered{
+    padding-left:16px !important;
+    font-family: "Proxima Soft", Arial, sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+}
+
+
+/*---------------------------- media queries --------------------------------*/
+@media screen and (min-width: 1600px) {
+    .shop-image img{
+        width:100% !important;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+
+    .about-pic figure::after{
+        left:25px;
+    }
+    .about-text-block{
+        padding-right:250px !important;
+    }
+    
+    .marouka-home-banner{
+        min-height:385px !important;
+    }
+    .hero-button{
+        top:470px;
+    }
+    .h2-hero-block h2{
+        top:-550px; 
+    }
+    .espa-banner figure{
+        top:305px;
+    }
+    
+    .shop-text::after{
+        right: -125px;
+    }
+}
+@media screen and (max-width: 1400px) {
+    
+    .about-pic figure::after{
+        left:-25px;
+    }
+    .about-text-block{
+        padding-right:150px !important;
+    }
+    
+   
+    .marouka-home-banner{
+        min-height:322px !important;
+    }
+    p.marouka-banner-text{
+        letter-spacing: -0.72px!important;
+        line-height: 46px!important;
+        font-size: 40px!important;
+    }
+    .marouka-banner-text a{
+        padding: 90px 50px;
+    }
+    
+    .hero-button{
+        top:405px;
+    }
+    .h2-hero-block h2{
+        top:-450px; 
+        font-size: 40px !important;
+        line-height: 47px !important;
+    }
+    .espa-banner figure{
+        top:250px;
+    }
+    
+    .shop-text::after{
+        right: -80px;
+    }
+    /* wishlist hearts get smaller */
+    div.yith-wcwl-wishlistaddedbrowse::before{
+        width:25px;
+    }
+    div.yith-wcwl-add-button a i.yith-wcwl-icon{
+        font-size:25px;
+    }
+    
+    div.footer-menu-div{
+        align-items: center;
+    }
+
+}
+@media screen and (max-width: 1200px) {
+    
+    .about-pic figure::after{
+        left:-60px;
+    }
+    .about-text-block{
+        padding-right:100px !important;
+    }
+
+    .marouka-home-banner{
+        min-height: 265px !important;
+        padding: 30px!important;
+    }
+    p.marouka-banner-text{
+        line-height: 38px!important;
+        font-size: 33px!important;
+    }
+    .marouka-banner-text a{
+        padding: 75px 45px;
+    }
+    
+    .hero-button{
+        top:375px;
+    }
+    .h2-hero-block h2{
+        top:-350px; 
+        font-size: 35px !important;
+        line-height: 40px !important;
+    }
+    
+    .espa-banner figure{
+        top:200px;
+    }
+    .shop-text::after{
+        right: -35px;
+    }
+
+}
+
 @media screen and (max-width: 992px) {
+    
+    .marouka-about-header{
+        line-height: 50px !important;
+        font-size: 48px !important;
+        margin-bottom: 28px;
+    }
+    p.marouka-about-text{
+        margin-bottom: 13px;
+    }
+    .about-text-block{
+        padding-right:0px !important;
+        margin-top:-20px!important;
+    }
+    
+    /* header media styles */
+    div.container.header-contents {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    /*---- dont display other icons ----*/
+    section#icl_lang_sel_widget-5{
+        display:none;
+    }
     
     span.lnr.lnr-user::before {
         display: none;
     }
     
-    section.widget.widget_search::before {
-        content: url('http://localhost/wordpress/wp-content/uploads/icons/search.svg');
+    section.widget.widget_search {
         display: none;
     }
+
+    /*---- header sidebar - cart icon ----*/
+    div.header-sidebar {
+        width: 25% !important;
+        margin: 0!important;
+    }
+    section.widget_shopping_cart{
+        margin: 0!important;
+        padding: 0!important;
+        margin-bottom:3px !important;
+    }
     
-    a.custom-logo-link {
-        float:left;
+    .header-sidebar{
+        position: absolute !important;
+        right: 50px !important;
+        margin-bottom:3px !important;
     }
-
-    div.widget_shopping_cart_content {
+    
+    #site-navigation .menu-toggle {
+        position: absolute;
+        top:23px;
+        right:30px;
+    }
+    .menu-toggle .icon-bar{
+        background-color: #593966 ;
+        width:28px ;  
+    }
+    .menu-toggle {
+        margin-top: 0;
+        padding: 0;
+        position: relative;
+        right: 10px;
         float: right;
-        margin: 0;
     }
 
+    /* Logo */
+    .site-branding-mobile img{
+        max-width: 100% !important;
+    }
+
+    /*--- footer media styles ---*/
+    .footer-logo {
+        text-align: center;
+        padding:20px;
+        margin-top: 10px;
+    }
+    .footer-icons{
+        text-align: center;
+    }
+    .footer-icons ul{
+        margin-right: 0 !important;
+        padding-top: 0px;
+    }
+    .footer-icons ul li a {
+        padding: 0 !important;
+        margin: 15px;
+    }
+    img.icon-insta{
+        padding:0 !important;
+    }
+    div.footer-info-copyright{
+        text-align: center;
+    }
+    div.footer-row-info{
+        padding-top:10px !important;
+        padding-bottom:10px !important;
+    }
+    div.footer-custom{
+        padding: 15px 0 20px;
+    }
+    
+    ul.products li.product{
+        width:100% !important;
+        float:none;
+        margin: 0 auto;
+        padding-bottom:18px;
+        
+    }
+    .stroke{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .marouka-banner-block2{
+        display:none;
+    }
+    .marouka-home-banner{
+        min-height: 360px !important;
+        min-width: 530!important;
+        padding: 120px 100px !important;
+        margin: 40px 0 20px;
+    }
+    p.marouka-banner-text{
+        letter-spacing: -1.0px!important;
+        line-height: 50px!important;
+        font-size: 44px!important;
+        text-align:center !important;
+    }
+    .marouka-banner-columns{
+        display:block;
+        margin: 0 auto;
+    }
+    .marouka-banner-text a{
+        padding: 105px 100px;
+    }
+    
+    .hero-button{
+        top:320px;
+        transform:scale(0.9);
+    }
+    .h2-hero-block h2{
+        top:-240px; 
+        font-size: 30px !important;
+        line-height: 36px !important;
+    }
+    .hero-image{
+        margin-bottom: 40px;
+    }   
+    .espa-banner figure{
+        transform:scale(0.9);
+        top:126px;
+        left:9px;
+    }
+    
+    .yoast-breadcrumbs{
+        display:none;
+    }
+    
+    .mobile-shop-text{
+        display:block;  
+        padding-bottom: 30px;
+    }
+    .shop-text{
+        display:none;
+    }
+    .shop-display-block{
+        display:block;
+    }
+    .shop-image{
+        border-radius:25px;
+    }
+    
+    .categories-block{
+        margin-top: 30px !important;
+    }
+    .categories-block .wp-block-column div ul li {
+        margin: 0 auto !important;
+        width: 70% !important;
+        float:none;
+    }
+    
+    /* wishlist hearts size*/
+    div.yith-wcwl-wishlistaddedbrowse::before{
+        width:35px;
+    }
+    div.yith-wcwl-add-button a i.yith-wcwl-icon{
+        font-size:35px;
+    }
 }
 
-/*div.site-header.left_logo_navigation_inline .header-sidebar{
-    width:33.3% !important;
+@media screen and (max-width: 768px) {
+    .about-pic figure::after{
+        content:'';
+    }
+    .about-blocks{
+        display:block !important;
+    }
+    .about-pic-block{
+        padding: 0 !important;
+        margin: 0 auto !important;
+    }
+    .about-pic figure img{
+       border-radius:25px !important;
+    }
+    div.about-text-block{
+        padding: 0 !important;
+        margin: 0 auto !important;
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+    .marouka-about-header{
+        text-align: center;
+        padding-top:30px;
+    }
+    
+    
+    .header-sidebar{
+        position: absolute !important;
+        right: 30px !important;
+    }
+    
+    .stroke{
+        line-height: 52px !important;
+        font-size: 28px !important;
+        letter-spacing: -0.72px;
+        padding-left: 10px;
+        /*margin-bottom:28px;*/
+    }
+    .stroke::after{
+        content: url(http://angelakopoulos.com/maroukas/wp-content/uploads/svg/stroke2.png);
+        position: relative;
+        left: 10px;
+        top: 0px;
+    }
+    
+    .marouka-home-banner{
+        padding: 110px!important;
+        margin: 40px 0 20px;
+    }
+    p.marouka-banner-text{
+        line-height: 52pximportant;
+        font-size: 46pximportant;
+        text-align:center !important;
+    }
+    .marouka-banner-text a{
+        padding: 105px 69px;
+    }
+    
+    .hero-image{
+        display:none;
+    }   
+    .hero-image-mobile{
+        display:block;
+        margin-bottom: -150px;
+        margin-top:20px;
+    }
+    .hero-button{
+        top:750px;
+    }
+    .h2-hero-block h2{
+        top:-180px; 
+        font-size: 35px !important;
+        line-height: 41px !important;
+        letter-spacing: -0.72px!important;
+    }
+    .espa-banner-block{
+        display:none;
+    }
+    .mobile-espa-banner-block{
+        display:flex;
+        justify-content:center;
+        background: white;
+        position:relative;
+        top:-57px;
+        margin-bottom:-57px!important;
+    }
+    .mobile-espa-banner{
+        margin: 0!important;
+    }
+    .mobile-home-header{
+        position:absolute!important;
+        top:75px!important;
+        padding:2px 0px!important;
+    }
 }
-.site-header .header-contents {
-    display: flex;
-    justify-content: space-between;
+
+
+@media screen and (max-width: 576px){
+    
+    .header-sidebar{
+        position: absolute !important;
+        right: 40px !important;
+    }
+    .site-branding-mobile img{
+        padding-left:20px;
+    }
+    
+    .marouka-home-banner{
+        max-width: 100% !important;
+        padding: 20px!important;
+    }
+    p.marouka-banner-text{
+        letter-spacing: -0.72px!important;
+        line-height: 34px!important;
+        font-size: 28px!important;
+        text-align:center;
+    }
+    .marouka-banner-text a{
+        padding: 130px 65px;
+    }
+    
+    .hero-image-mobile{
+        margin-bottom: -270px;
+    }
+    .hero-button{
+        top:735px;
+        transform: scale(0.85);
+    }
+    .h2-hero-block h2{
+        top:-130px; 
+        font-size: 28px !important;
+        line-height: 36px !important;
+    }
+    
+    
 }
+
+@media screen and (max-width: 435px){
+    .hero-button{
+        top:600px;
+    }
+    .h2-hero-block h2{
+        top:-32px; 
+        font-size: 28px !important;
+        line-height: 34px !important;
+    }
+    /* wishlist hearts size*/
+    div.yith-wcwl-wishlistaddedbrowse::before{
+        width:25px;
+    }
+    div.yith-wcwl-add-button a i.yith-wcwl-icon{
+        font-size:25px;
+    }
+    
+}
+@media screen and (max-width: 392px){
+    .hero-button{
+        top:560px;
+    }
+}
+@media screen and (max-width: 376px){
+    .header-sidebar{
+        position: absolute !important;
+        right: 50px !important;
+    }
+    .mobile-footer-info-links{
+        padding-right: 5px !important;   
+        padding-left: 5px !important; 
+    }
+    .marouka-banner-text a{
+        padding: 130px 40px;
+    }
+    
+    .hero-button{
+        top:515px;
+    }
+    .h2-hero-block h2{
+        top:-40px; 
+        font-size: 26px !important;
+        line-height: 32px !important;
+    }
+    .footer-info {
+        letter-spacing: 0px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .footer-info{
+        font-size:13px !important;
+    }
+    .mobile-footer-info-links{
+        padding: 0 !important;
+        font-size:13px !important;
+    }
+    
+    .stroke{
+        margin: 0;
+        padding: 0;
+        font-size:24px !important;
+        
+    }
+    .stroke::after{
+        content: url(http://angelakopoulos.com/maroukas/wp-content/uploads/svg/stroke2.png);
+        position: relative;
+        left: 123px;
+        top: -50px;
+    }
+    .marouka-banner-text a{
+        padding: 130px 16px;
+    }
+    
+    .hero-button{
+        top:450px;
+        transform: scale(0.85);
+    }
+    .h2-hero-block h2{
+        top:-8px; 
+        font-size: 23px !important;
+        line-height: 29px !important;
+    }
+}
+
+

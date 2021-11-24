@@ -26,3 +26,80 @@ function yithproteo_child_enqueue_styles() {
 }
 
 add_action( 'wp_enqueue_scripts', 'yithproteo_child_enqueue_styles' );
+add_filter( 'https_local_ssl_verify', '__return_true' );
+
+add_action( 'woocommerce_product_meta_start', 'add_custom_offer_msg',10 );
+
+add_action( 'woocommerce_archive_description', 'custom_markup_for_archive_page' );
+
+add_filter('loop_shop_columns', 'loop_columns', 999);
+if (!function_exists('loop_columns')) {
+	function loop_columns() {
+		return 3; // 3 products per row
+	}
+}
+
+if (!function_exists('my_yoast_breadcrumb') ) {
+  function my_yoast_breadcrumb() {
+    yoast_breadcrumb('<div id="breadcrumbs" class="yoast-breadcrumbs">','</p>');
+  }
+}
+
+
+function custom_markup_for_archive_page(){
+    if (! is_product_category() ){
+        return;
+    }
+    global $wp_query;
+    $cat = $wp_query->get_queried_object();
+    $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true ); 
+    $image = wp_get_attachment_url( $thumbnail_id ); 
+    $page_name = $cat->name;
+    echo '<div class="page-description">
+	<div class="wp-block-columns shop-display-block">
+		<div class="wp-block-column">
+			<h2 class="has-text-align-center mobile-shop-text">'.$page_name.'</h2>
+			<figure class="wp-block-image size-full shop-image">
+            <img src="'.$image.'" width="562" alt="" class="category-imagez" />
+			</figure>
+		</div>
+		<div class="wp-block-column is-vertically-aligned-center">
+			<h2 class="has-text-align-center shop-text">'.$page_name.'</h2>';
+			my_yoast_breadcrumb(); 
+		echo '
+		</div>
+	</div>
+</div>';
+}
+
+add_filter( 'woocommerce_catalog_orderby', 'my_custom_sorting_options' );
+
+function my_custom_sorting_options( $options ){
+	unset( $options[ 'popularity' ] );
+	unset( $options[ 'menu_order' ] );
+	unset( $options[ 'rating' ] );
+	
+// 	$options[ 'price' ] = 'Lowest price';
+// 	$options[ 'price-desc' ] = 'Highest price';	
+// 	$options[ 'date' ] = 'Latest';	
+	
+	return $options;
+}
+
+
+function add_custom_offer_msg(){
+    global $product;
+    if (! $product->is_on_sale() ) return; 
+    
+    if (ICL_LANGUAGE_CODE === 'el'){
+        echo '<h3 style="color: blue">Μη χάσεις αυτή την μοναδική προσφορά!</h3>';
+    } elseif (ICL_LANGUAGE_CODE === 'en'){
+        echo '<h3 style="color: blue">Don\'t miss out on this great offer!</h3>';
+    }
+}
+
+add_action( 'wp_enqueue_scripts', 'my_custom_script', 15 );
+function my_custom_script() {
+    wp_enqueue_script('custom_javascript', get_stylesheet_directory_uri() . '/js/script.js', array('jquery'), '1.0.0', true );
+}
+

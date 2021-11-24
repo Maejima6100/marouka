@@ -75,8 +75,9 @@ global $post;
 
 	if ( 'on' !== $hide_header ) {
 		?>
+
 		<header id="masthead"
-				class="site-header <?php echo esc_attr( get_theme_mod( 'yith_proteo_header_layout', 'left_logo_navigation_inline' ) ); ?> <?php echo esc_attr( get_theme_mod( 'yith_proteo_header_fullwidth', 'no' ) === 'yes' ? 'fullwidth-header' : '' ); ?> <?php echo esc_attr( $slider && '' !== $slider ? 'with-header-slider' : '' ); ?>" <?php yith_proteo_custom_header_style(); ?>>
+				class="site-header pt-3 <?php echo esc_attr( get_theme_mod( 'yith_proteo_header_layout', 'left_logo_navigation_inline' ) ); ?> <?php echo esc_attr( get_theme_mod( 'yith_proteo_header_fullwidth', 'no' ) === 'yes' ? 'fullwidth-header' : '' ); ?> <?php echo esc_attr( $slider && '' !== $slider ? 'with-header-slider' : '' ); ?>" <?php yith_proteo_custom_header_style(); ?>>
 			<?php
 			if ( get_theme_mod( 'yith_proteo_topbar_enable', 'no' ) === 'yes' ) {
 				get_template_part( 'template-parts/topbar' );
@@ -85,6 +86,12 @@ global $post;
 			<div class="container header-contents  <?php echo esc_attr( get_theme_mod( 'yith_proteo_mobile_menu_opener_position', 'right' ) === 'left' ? 'left-toggle' : 'right-toggle' ); ?>">
 				<?php if ( yith_proteo_display_header_text() ) { ?>
 				
+				<!---mobile-logo image --->
+				<div class="site-branding-mobile d-xl-none d-lg-none d-md-block <?php echo esc_attr( $yith_proteo_tagline_position ); ?>">
+					<a href="http://angelakopoulos.com/maroukas/" class="custom-logo-link-mobile" rel="home" aria-current="page">
+						<img src="https://angelakopoulos.com/maroukas/wp-content/uploads/svg/Marouka_logo_horizontal.svg" alt="mobile logo image" class="mobile-logo">
+					</a>
+				</div>
 				<!-- #site-navigation -->
 				<nav id="site-navigation" class="main-navigation">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
@@ -123,7 +130,8 @@ global $post;
 				</nav><!-- #site-navigation -->
 
 				<!-- .site-branding -->
-				<div class="site-branding <?php echo esc_attr( $yith_proteo_tagline_position ); ?>">
+				
+				<div class="site-branding d-none d-lg-block <?php echo esc_attr( $yith_proteo_tagline_position ); ?>">
 					<?php
 					if ( is_front_page() && is_home() ) {
 						?>
@@ -231,6 +239,33 @@ global $post;
 		}
 	}
 	?>
+	<!-- Script to change the language selector display -->
+	<script type="text/javascript">
+		const activeLinkLi = document.querySelector('.wpml-ls-current-language');
+	    const wpml = document.querySelector('span.wpml-ls-display');
+	    if(wpml.textContent === 'Greek'){
+	        wpml.textContent = 'EL';
+	    }else if (wpml.textContent === 'Αγγλικά'){
+	        wpml.textContent = 'EN';
+	    }
+	    const wpmlCurrent = document.querySelector('span.wpml-ls-native');
+	    if(wpmlCurrent.textContent === 'Ελληνικά'){
+	        wpmlCurrent.textContent = 'EL';
+	        activeLinkLi.innerHTML = '<span class="wpml-ls-native">EL</span>';
+	    }else if (wpmlCurrent.textContent === 'English'){
+	        wpmlCurrent.textContent = 'EN';
+	        activeLinkLi.innerHTML = '<span class="wpml-ls-native">EN</span>';
+	    }
+	    
+	</script>
+	
+	<!-- Script to hide the cart items element when cart is empty NOT WORKING-->
+	<script type="text/javascript">
+	    const cartLink = document.querySelector('.proceed-to-cart-icon');
+	    const spanItem = cartLink.lastElementChild;
+        (spann.textContent === '0') ? spann.style.opacity = '0' : spann.style.opacity = '1';
+	</script>
+	
 	<div id="content" class="site-content" <?php echo $custom_spacing ? $custom_spacing : ''; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 		<?php do_action( 'yith_proteo_before_page_content' ); ?>
 		<div class="container">
